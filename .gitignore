@@ -1,0 +1,62 @@
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# LaTeX build intermediates
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.xdv
+_minted-*/
+
+# This log is an intentional input file for experiment 1
+!week1/q01/input/run.log
+
+# Re-creatable output from the after-class exercise runner
+week1/after_class_practice/logs/
+week1/after_class_practice/runs/
+
+# The canonical final report is kept in week1/output/pdf/
+week1/report/week01_experiment_report.pdf
+
+# Scratch files created when testing exercises from the week1 directory
+/week1/a.txt
+/week1/b.txt
+/week1/c.txt
+/week1/file1.txt
+/week1/file2.txt
+/week1/file10.txt
+/week1/fileA.txt
+/week1/note.md
+/week1/existing.txt
+/week1/check.sh
+/week1/trace.sh
+
+# Local temporary and cache directories
+/tmp/
+/.cache/
