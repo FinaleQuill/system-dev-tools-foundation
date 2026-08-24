@@ -1,0 +1,3 @@
+7	input/docs/.secret.txt
+11	input/docs/notes one.txt
+0	input/tmp/empty.txt

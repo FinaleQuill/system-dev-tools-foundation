@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{accent}{HTML}{1F5A94}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
+
+\begin{document}
+\title{\textcolor{accent}{Tool Report}}
+\author{Name -- Student ID}
+\date{August 24, 2026}
+\maketitle
+
+\section{Result}
+For a data set containing $n$ latency measurements $t_i$, the arithmetic
+mean is defined by Equation~\eqref{eq:mean-latency}.
+\begin{equation}
+  \bar{t}=\frac{1}{n}\sum_{i=1}^{n} t_i
+  \label{eq:mean-latency}
+\end{equation}
+The compact build check in Table~\ref{tab:build-check} records the two
+essential parts of this one-page technical note.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Build check}
+  \label{tab:build-check}
+  \begin{tabular}{cc}
+    \toprule
+    Item & Status \\
+    Formula reference & Passed \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The numbered formula and the captioned table are both referenced in the
+body text. The document is therefore ready for a command-line build.
+\end{document}

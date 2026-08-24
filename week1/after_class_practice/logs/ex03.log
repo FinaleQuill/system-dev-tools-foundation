@@ -1,0 +1,16 @@
+$ ls *.txt
+a.txt
+b.txt
+c.txt
+file1.txt
+file10.txt
+file2.txt
+fileA.txt
+$ ls file?.txt
+file1.txt
+file2.txt
+fileA.txt
+$ ls {a,b,c}.txt
+a.txt
+b.txt
+c.txt

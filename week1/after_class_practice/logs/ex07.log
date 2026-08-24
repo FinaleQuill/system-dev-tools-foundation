@@ -1,0 +1,8 @@
+$ type cd
+cd is a shell builtin
+$ pwd
+/c/Users/16683/Desktop/系统开发工具基础/after_class_practice/runs/ex07
+$ (cd subdir; pwd)
+/c/Users/16683/Desktop/系统开发工具基础/after_class_practice/runs/ex07/subdir
+$ pwd
+/c/Users/16683/Desktop/系统开发工具基础/after_class_practice/runs/ex07

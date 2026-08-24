@@ -1,0 +1,7 @@
+$ printf 'week-1 notes\n' > notes.txt
+$ cp notes.txt "notes_$(date +%Y-%m-%d).txt"
+$ ls -l notes*.txt
+-rw-r--r-- 1 16683 197610 13 Aug 24 20:19 notes.txt
+-rw-r--r-- 1 16683 197610 13 Aug 24 20:19 notes_2026-08-24.txt
+$ cmp -s notes.txt "notes_$(date +%Y-%m-%d).txt" && echo identical
+identical

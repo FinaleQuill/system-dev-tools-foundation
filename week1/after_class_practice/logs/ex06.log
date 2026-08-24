@@ -1,0 +1,9 @@
+$ false; echo $?
+1
+$ true && echo success
+success
+$ false || echo fallback
+fallback
+$ test -d "$target" || mkdir "$target"
+$ ls -ld "$target"
+drwxr-xr-x 1 16683 197610 0 Aug 24 20:19 mydir_25020007193_2001

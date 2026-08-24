@@ -1,0 +1,6 @@
+$ bash check.sh existing.txt
+File exists: existing.txt
+$ bash check.sh missing.txt
+File not found: missing.txt
+$ echo $?
+1

@@ -1,0 +1,18 @@
+$ ls -l /
+total 2440
+-rw-r--r-- 1 16683 197610  18765 Aug 21 00:03 LICENSE.txt
+-rw-r--r-- 1 16683 197610   3738 Aug 21 00:03 README.portable
+drwxr-xr-x 1 16683 197610      0 Aug 24 20:15 bin
+drwxr-xr-x 1 16683 197610      0 Aug 24 20:15 cmd
+drwxr-xr-x 1 16683 197610      0 Aug 24 20:14 dev
+drwxr-xr-x 1 16683 197610      0 Aug 24 20:15 etc
+-rwxr-xr-x 1 16683 197610 135016 Aug 20 23:47 git-bash.exe
+-rwxr-xr-x 1 16683 197610 134488 Aug 20 23:47 git-cmd.exe
+drwxr-xr-x 1 16683 197610      0 Aug 24 20:14 mingw64
+dr-xr-xr-x 8 16683 197610      0 Aug 24 20:19 proc
+drwxr-xr-x 1 16683 197610      0 Aug 24 20:19 tmp
+drwxr-xr-x 1 16683 197610      0 Aug 24 20:14 usr
+$ ls -ld / /tmp /usr/bin/bash
+drwxr-xr-x 1 16683 197610       0 Aug 24 20:15 /
+drwxr-xr-x 1 16683 197610       0 Aug 24 20:19 /tmp
+-rwxr-xr-x 1 16683 197610 2449886 Aug 20 22:55 /usr/bin/bash

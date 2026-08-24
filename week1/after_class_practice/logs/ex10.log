@@ -1,0 +1,8 @@
+$ bash trace.sh
++ name=trace-demo
++ echo 'hello trace-demo'
+hello trace-demo
++ test -f sample.txt
++ touch sample.txt
++ wc -c sample.txt
+0 sample.txt

@@ -1,0 +1,8 @@
+$ printf with single quotes
+price=$5 ! \n
+$ printf with double quotes and escapes
+price=$5 ! 
+
+$ printf with ANSI-C quotes
+price=$5 !
+second line
