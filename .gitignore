@@ -60,3 +60,7 @@ week1/report/week01_experiment_report.pdf
 # Local temporary and cache directories
 /tmp/
 /.cache/
+
+# Course PDFs distributed separately
+/系统开发工具基础.pdf
+/系统开发工具基础_每周课上实验检查题_学生版.pdf
