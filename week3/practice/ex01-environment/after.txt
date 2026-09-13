@@ -1,0 +1,78 @@
+
+Name                           Value
+----                           -----
+_OLD_VIRTUAL_PATH              C:\Users\16683\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershel…
+ALLUSERSPROFILE                C:\ProgramData
+APPDATA                        C:\Users\16683\AppData\Roaming
+asl.log                        Destination=file
+CLion                          E:\CLion\CLion 2025.3.2\bin
+CODEX_APP_TOOLS_PIPE_PATH      \\.\pipe\codex-browser-use-5e20745e-764a-453e-8537-eb898c5d6d70
+CODEX_CI                       1
+CODEX_INTERNAL_ORIGINATOR_OVE… Codex Desktop
+CODEX_MCP_NODE_PATH            C:\Users\16683\AppData\Local\OpenAI\Codex\runtimes\cua_node\b474a88d5d105afa\bin\node.exe
+CODEX_PERMISSION_PROFILE       :workspace
+CODEX_SAGE_BACKFILL_TRACKER_T… 1
+CODEX_SANDBOX_NETWORK_DISABLED 1
+CODEX_SESSION_ID               01a07ad6-8e03-71b3-ab2e-d656ba20a358
+CODEX_SHELL                    1
+CODEX_THREAD_ID                01a07ad6-8e03-71b3-ab2e-d656ba20a358
+COLORTERM
+CommonProgramFiles             C:\Program Files\Common Files
+CommonProgramFiles(x86)        C:\Program Files (x86)\Common Files
+CommonProgramW6432             C:\Program Files\Common Files
+COMPUTERNAME                   终幕笔
+ComSpec                        C:\Windows\system32\cmd.exe
+DISABLE_AUTO_UPDATE            true
+DriverData                     C:\Windows\System32\Drivers\DriverData
+GH_PAGER                       cat
+GIT_CONFIG_COUNT               2
+GIT_CONFIG_KEY_0               safe.directory
+GIT_CONFIG_KEY_1               safe.directory
+GIT_CONFIG_VALUE_0             C:\Users\16683\Desktop\系统开发工具基础
+GIT_CONFIG_VALUE_1             C:\Users\16683\Desktop\系统开发工具基础/*
+GIT_PAGER                      cat
+HOMEDRIVE                      C:
+HOMEPATH                       \Users\16683
+LANG                           C.UTF-8
+LC_ALL                         C.UTF-8
+LC_CTYPE                       C.UTF-8
+LESS
+LOCALAPPDATA                   C:\Users\16683\AppData\Local
+LOG_FORMAT                     json
+LOGONSERVER                    \\终幕笔
+NO_COLOR                       1
+NUMBER_OF_PROCESSORS           32
+OneDrive                       C:\Users\16683\OneDrive
+OneDriveConsumer               C:\Users\16683\OneDrive
+OS                             Windows_NT
+PAGER                          cat
+PATH                           C:\Users\16683\Desktop\系统开发工具基础\week3\practice\ex01-environment\.venv\Scripts;C:…
+PATHEXT                        .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+PROCESSOR_ARCHITECTURE         AMD64
+PROCESSOR_IDENTIFIER           Intel64 Family 6 Model 183 Stepping 1, GenuineIntel
+PROCESSOR_LEVEL                6
+PROCESSOR_REVISION             b701
+ProgramData                    C:\ProgramData
+ProgramFiles                   C:\Program Files
+ProgramFiles(x86)              C:\Program Files (x86)
+ProgramW6432                   C:\Program Files
+PSExecutionPolicyPreference    Bypass
+PSModulePath                   C:\Users\16683\Documents\PowerShell\Modules;C:\Program Files\PowerShell\Modules;c:\users…
+PUBLIC                         C:\Users\Public
+PyCharm                        E:\Pycharm\PyCharm 2025.3.1.1\bin
+RUST_LOG                       warn
+SHELL                          C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+SystemDrive                    C:
+SystemRoot                     C:\Windows
+TEMP                           C:\Users\16683\AppData\Local\Temp
+TERM                           dumb
+TMP                            C:\Users\16683\AppData\Local\Temp
+USERDOMAIN                     终幕笔
+USERDOMAIN_ROAMINGPROFILE      终幕笔
+USERNAME                       16683
+USERPROFILE                    C:\Users\16683
+VIRTUAL_ENV                    C:\Users\16683\Desktop\系统开发工具基础\week3\practice\ex01-environment\.venv
+VIRTUAL_ENV_PROMPT             .venv
+windir                         C:\Windows
+ZSH_TMUX_AUTOSTART             false
+ZSH_TMUX_AUTOSTARTED           true

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>问候语生成器</title>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f3f7fb; color: #183b63; font-family: system-ui, "Microsoft YaHei", sans-serif; }
+    main { width: min(90vw, 480px); padding: 2rem; border-radius: 16px; background: white; box-shadow: 0 12px 32px #183b6326; text-align: center; }
+    input, button { box-sizing: border-box; width: 100%; padding: .8rem 1rem; font: inherit; border-radius: 8px; }
+    input { border: 1px solid #c9d4df; margin: 1rem 0 .7rem; }
+    button { border: 0; background: #2b6eae; color: white; cursor: pointer; }
+    #result { min-height: 1.5em; margin-top: 1.2rem; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>问候语生成器</h1>
+    <p>输入名字，生成一条简洁的问候语。</p>
+    <input id="name" aria-label="姓名" placeholder="例如：同学">
+    <button id="greet">生成问候语</button>
+    <p id="result" aria-live="polite"></p>
+  </main>
+  <script>
+    const name = document.querySelector("#name");
+    const result = document.querySelector("#result");
+    document.querySelector("#greet").addEventListener("click", () => {
+      const value = name.value.trim();
+      result.textContent = value ? "Hello, " + value + "!" : "请输入非空姓名。";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      GREETING: "Hello from the compose service"
+    depends_on:
+      - cache
+  cache:
+    image: redis:7-alpine
