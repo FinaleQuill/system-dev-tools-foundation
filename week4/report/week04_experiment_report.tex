@@ -36,7 +36,7 @@
 \end{center}
 \vspace{.7cm}
 \begin{tcolorbox}[colback=soft,colframe=navy,boxrule=.8pt,arc=2mm,left=5mm,right=5mm,top=4mm,bottom=4mm]
-\centering 本报告记录第 4 周代码质量练习与课堂综合题的实际执行结果。内容覆盖格式化、静态检查、测试、覆盖率、提交前检查、持续集成、命令运行器、正则表达式，以及 q13--q16 的质量门禁、Make 构建、API 报告和软件包交付。
+\centering 本报告记录第 4 周课堂综合题 q13--q16 的实际执行结果。内容覆盖本地质量门禁、Make 增量构建、API 数据报告，以及 Python 软件包的测试、构建与 Git 交付。
 \end{tcolorbox}
 \vspace{.55cm}
 \begin{table}[H]\centering\caption{第 4 周任务完成情况}\renewcommand{\arraystretch}{1.22}
@@ -46,24 +46,19 @@
 14&让 Make 只重建受影响的产物&Make、Python&完成\\
 15&把本地 API 数据转换为可读报告&curl、jq、Markdown&完成\\
 16&修复并交付陌生小型工具包&Make、build、Git&完成\\
-1&格式化与只检查模式&Ruff format&完成\\
-2&静态检查与自动修复&Ruff check&完成\\
-3&单元测试与边界条件&pytest&完成\\
-4&覆盖率报告与补测&coverage.py、pytest&完成\\
-5&提交前质量门禁&pre-commit&完成\\
-6&持续集成工作流&GitHub Actions&完成\\
-7&统一命令入口&Make&完成\\
-8&查找危险 shell 调用&grep、regex&完成\\
-9&Markdown 精确替换&regex&完成\\
-10&JSON 名称提取&regex、json&完成\\\bottomrule
+\bottomrule
 \end{tabularx}\end{table}
 \clearpage\exercisebanner{13}{建立可执行的本地质量门禁}{Ruff、pytest 与 Shell}
 \subsection*{执行内容}
 以 q10 的 \texttt{greetlab} 项目为基础，在 q13 中保留 \texttt{src/} 与 \texttt{tests/} 的标准结构，补充 Ruff 和 pytest 配置，并创建 \texttt{check.sh}。脚本依次执行格式检查、静态检查和单元测试；空白姓名应触发 argparse 错误并返回退出码 2。
 \begin{lstlisting}[style=shell]
+cd ~/Desktop/新建文件夹/q13
+source .venv/bin/activate
+python -m pip install ruff pytest
+python -m ruff format --check .
 python -m ruff format .
 python -m ruff check .
-python -m pytest
+python -m pytest -q
 ./check.sh
 echo $?
 \end{lstlisting}
@@ -81,6 +76,8 @@ echo $?
 \subsection*{执行内容}
 \texttt{stats.txt} 依赖 \texttt{data.csv} 和 \texttt{stats.py}，\texttt{report.txt} 进一步依赖 \texttt{stats.txt}、\texttt{report.md} 与 \texttt{build\_report.py}。首次 \texttt{make} 生成两个产物；随后未修改文件时不执行配方；更新 \texttt{data.csv} 的时间戳后，两项产物重新生成。
 \begin{lstlisting}[style=shell]
+cd ~/Desktop/新建文件夹/q14
+cat Makefile
 make
 cat stats.txt
 cat report.txt
@@ -88,6 +85,7 @@ make
 touch data.csv
 make
 make clean
+ls
 \end{lstlisting}
 \begin{figure}[H]\centering
 \includegraphics[width=.94\textwidth,height=.58\textheight,keepaspectratio]{assets/q14-make.png}
@@ -99,9 +97,13 @@ make clean
 \subsection*{执行内容}
 在 q15 中通过 \texttt{python3 -m http.server 8000} 提供 \texttt{packages.json}，\texttt{api\_report.sh} 使用 curl 获取 JSON，再由 jq 过滤 \texttt{active} 且下载量不少于 100 的记录，并按下载量降序、名称升序输出 Markdown 表格。
 \begin{lstlisting}[style=shell]
+cd ~/Desktop/新建文件夹/q15
+sudo apt install -y jq
+chmod +x api_report.sh
 python3 -m http.server 8000 > server.log 2>&1 &
 server_pid=$!
 sleep 1
+curl -fsS http://127.0.0.1:8000/packages.json
 ./api_report.sh
 cat summary.md
 kill "$server_pid"
@@ -116,25 +118,32 @@ kill "$server_pid"
 \subsection*{执行内容}
 q16 从 q13 复制，并初始化独立 Git 仓库。先将问候实现临时改为固定输出 \texttt{Hello, name!}，再以 \texttt{make check} 验证正常姓名测试会失败；随后恢复使用传入姓名的实现，重新检查并构建 wheel。
 \begin{lstlisting}[style=shell]
-make check                 # 故意错误时失败
+cd ~/Desktop/新建文件夹
+cp -a q13 q16
+cd q16
+git init
+python -m pip install build
+make check                 # 故意错误时返回非零
+./check.sh                 # 恢复正确实现后通过
 make check                 # 修复后通过
 make build
 ls -lh dist/
+sha256sum dist/*.whl
 git add .
 git commit -m "feat: deliver verified greetlab package"
+git status
 \end{lstlisting}
 \begin{figure}[H]\centering
 \includegraphics[width=.94\textwidth,height=.54\textheight,keepaspectratio]{assets/q16-failing-check.png}
 \caption{q16 中固定问候语导致正常姓名测试失败}
 \end{figure}
-\begin{summarybox}{结果说明}失败时实际输出为 \texttt{Hello, name!}，与期望的 \texttt{Hello, Ada!} 不一致，\texttt{make check} 返回非零状态，说明测试能有效定位回归。\end{summarybox}
 
 \clearpage\exercisebanner{16}{修复验证与交付}{测试、构建与 Git}
 \begin{figure}[H]\centering
 \includegraphics[width=.94\textwidth,height=.52\textheight,keepaspectratio]{assets/q16-passing-check.png}
 \caption{q16 修复后 make check 通过}
 \end{figure}
-\begin{summarybox}{修复结果}恢复问候函数后，两项测试均通过，说明正常姓名与空白姓名两个行为均得到验证。\end{summarybox}
+\begin{summarybox}{结果说明}临时错误时实际输出为 \texttt{Hello, name!}，与期望的 \texttt{Hello, Ada!} 不一致，\texttt{make check} 返回非零状态；恢复问候函数后，两项测试均通过，说明正常姓名与空白姓名两个行为均得到验证。\end{summarybox}
 \clearpage
 \begin{figure}[H]\centering
 \includegraphics[width=.94\textwidth,height=.54\textheight,keepaspectratio]{assets/q16-build-git.png}
