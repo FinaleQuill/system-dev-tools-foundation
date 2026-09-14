@@ -64,3 +64,13 @@ week1/report/week01_experiment_report.pdf
 # Course PDFs distributed separately
 /系统开发工具基础.pdf
 /系统开发工具基础_每周课上实验检查题_学生版.pdf
+
+# Week 4 local tooling outputs
+/week4/code_quality_practice/.deps/
+/week4/q13/.pytest_cache/
+/week4/q13/.ruff_cache/
+/week4/q16/.pytest_cache/
+/week4/q16/.ruff_cache/
+/week4/q16/build/
+/week4/q16/src/*.egg-info/
+/week4/q15/server.log
